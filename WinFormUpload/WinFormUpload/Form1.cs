@@ -54,7 +54,8 @@ namespace WinFormUpload
             VarPost.Add("Image", Base64); //图片字符
 
             byte[] RemoteByte = WClient.UploadValues("http://172.31.132.44:8892/WebForm2.aspx", "POST", VarPost);//提交post请求
-            label1.Invoke(new Action(() => label1.Text = "ok"));
+
+            label1.Invoke(new Action(() => label1.Text = WebClientResult(RemoteByte) ? "ok" : "error"));
         }
 
         //根据文件名(完全路径)
@@ -67,6 +68,12 @@ namespace WinFormUpload
             fs.Read(image, 0, streamLength);
             fs.Close();
             return image;
+        }
+
+        public bool WebClientResult(byte[] result)
+        {
+            string html = Encoding.Default.GetString(result, 0, result.Length);
+            return html.IndexOf("Resule->OK") > 0;
         }
     }
 }
