@@ -22,7 +22,11 @@ namespace WebApplication1
                 for (int j = 1; j < 13; j++)
                 {
                     string fileName = i.ToString() + j.ToString().PadLeft(2, '0');
-                    Directory.CreateDirectory(Server.MapPath("~/Upload/") + fileName);
+                    fileName = Server.MapPath("~/Upload/") + fileName;
+                    if (!Directory.Exists(fileName))
+                    {
+                        Directory.CreateDirectory(Server.MapPath("~/Upload/") + fileName);
+                    }
                 }
             }
         }

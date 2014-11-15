@@ -31,8 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.txtID = new System.Windows.Forms.TextBox();
-            this.txtType = new System.Windows.Forms.TextBox();
+            this.txtImagePath = new System.Windows.Forms.TextBox();
             this.txtPath = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
@@ -65,19 +64,12 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // txtID
+            // txtImagePath
             // 
-            this.txtID.Location = new System.Drawing.Point(25, 68);
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(228, 21);
-            this.txtID.TabIndex = 3;
-            // 
-            // txtType
-            // 
-            this.txtType.Location = new System.Drawing.Point(25, 95);
-            this.txtType.Name = "txtType";
-            this.txtType.Size = new System.Drawing.Size(228, 21);
-            this.txtType.TabIndex = 4;
+            this.txtImagePath.Location = new System.Drawing.Point(25, 95);
+            this.txtImagePath.Name = "txtImagePath";
+            this.txtImagePath.Size = new System.Drawing.Size(228, 21);
+            this.txtImagePath.TabIndex = 4;
             // 
             // txtPath
             // 
@@ -92,8 +84,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
             this.Controls.Add(this.txtPath);
-            this.Controls.Add(this.txtType);
-            this.Controls.Add(this.txtID);
+            this.Controls.Add(this.txtImagePath);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
@@ -109,8 +100,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.TextBox txtType;
+        private System.Windows.Forms.TextBox txtImagePath;
         private System.Windows.Forms.TextBox txtPath;
     }
 }

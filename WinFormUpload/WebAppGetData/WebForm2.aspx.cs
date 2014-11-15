@@ -12,9 +12,10 @@ namespace WebApplication1
     {
         string Path = "~/Upload/";
 
-        string ID = "";
-        string Type = "";
-        string ImageID = "";
+        //string ID = "";
+        //string Type = "";
+        //string ImageID = "";
+        string ImagePath = "";
         string Image = "";
 
         protected void Page_Load(object sender, EventArgs e)
@@ -23,11 +24,11 @@ namespace WebApplication1
             Response.Flush();
             try
             {
-                ID = Request.Form["ID"];
-                Type = Request.Form["Type"];
-                ImageID = Request.Form["ImageID"];
+                //ID = Request.Form["ID"];
+                //Type = Request.Form["Type"];
+                ImagePath = Request.Form["ImagePath"];
                 Image = Request.Form["Image"];
-                SaveStringToImage(Image, ID + "_" + Type + "_" + ImageID + ".jpg");
+                SaveStringToImage(Image, ImagePath);
 
                 Response.Write(" Resule->OK");
             }
@@ -37,9 +38,9 @@ namespace WebApplication1
             }
         }
 
-        public void SaveStringToImage(string data, string fileName)
+        public void SaveStringToImage(string data, string ImagePath)
         {
-            string savePath = Server.MapPath(Path) + fileName;
+            string savePath = Server.MapPath(Path) + ImagePath;
 
             byte[] buf = Convert.FromBase64String(data);//把字符串读到字节数组中
             MemoryStream ms = new MemoryStream(buf);

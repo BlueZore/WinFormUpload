@@ -44,13 +44,11 @@ namespace WinFormUpload
         {
             WebClient WClient = new WebClient();
             System.Collections.Specialized.NameValueCollection VarPost = new System.Collections.Specialized.NameValueCollection();//用于存放post数据
-            VarPost.Add("ID", txtID.Text); //数据ID
-            VarPost.Add("Type", txtType.Text); //标识
 
             byte[] imageSource = SetImageToByteArray(txtPath.Text);
             //转Base64
             string Base64 = Convert.ToBase64String(imageSource);
-            VarPost.Add("ImageID", Guid.NewGuid().ToString()); //图片ID
+            VarPost.Add("ImagePath", txtImagePath.Text); //图片ID
             VarPost.Add("Image", Base64); //图片字符
 
             byte[] RemoteByte = WClient.UploadValues("http://172.31.132.44:8892/WebForm2.aspx", "POST", VarPost);//提交post请求
